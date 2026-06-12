@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CopaGram | New Post</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@700;800;900&family=Be+Vietnam+Pro:wght@400;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+        .glass-overlay {
+            background: rgba(0, 107, 38, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .stadium-glow {
+            box-shadow: 0 0 20px rgba(253, 220, 0, 0.2);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#25428f",
+                    "on-tertiary-fixed": "#00174d",
+                    "on-primary-fixed": "#002107",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#ffe24b",
+                    "on-secondary-container": "#706000",
+                    "surface-container-low": "#eff6ea",
+                    "outline": "#6e7b6b",
+                    "primary-container": "#008732",
+                    "tertiary-fixed-dim": "#b5c4ff",
+                    "surface-container": "#e9f0e4",
+                    "tertiary": "#3d57a6",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#d5dcd0",
+                    "surface-variant": "#dde5d9",
+                    "on-primary-container": "#f7fff2",
+                    "on-tertiary-container": "#fefbff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#5771c1",
+                    "primary": "#006b26",
+                    "on-error": "#ffffff",
+                    "on-background": "#171d16",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f4fcef",
+                    "tertiary-fixed": "#dbe1ff",
+                    "secondary-container": "#fddc00",
+                    "on-primary-fixed-variant": "#00531c",
+                    "surface-tint": "#006e27",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#e3c600",
+                    "surface": "#f4fcef",
+                    "background": "#f4fcef",
+                    "secondary": "#6d5e00",
+                    "primary-fixed": "#81fc90",
+                    "outline-variant": "#bdcab9",
+                    "surface-container-high": "#e3eade",
+                    "inverse-primary": "#65df76",
+                    "on-surface-variant": "#3e4a3d",
+                    "surface-container-highest": "#dde5d9",
+                    "on-secondary-fixed-variant": "#524600",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2b322a",
+                    "on-surface": "#171d16",
+                    "inverse-on-surface": "#ecf3e7",
+                    "on-secondary-fixed": "#211b00",
+                    "primary-fixed-dim": "#65df76",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "xs": "4px",
+                    "container-margin": "20px",
+                    "sm": "8px",
+                    "base": "4px",
+                    "gutter": "16px",
+                    "xl": "40px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "stats-number": ["Anybody"],
+                    "display-lg": ["Anybody"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "display-lg-mobile": ["Anybody"],
+                    "label-bold": ["Be Vietnam Pro"],
+                    "headline-md": ["Anybody"],
+                    "body-lg": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "stats-number": ["20px", {"lineHeight": "1", "fontWeight": "900"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background dark:bg-inverse-surface text-on-background dark:text-inverse-on-surface min-h-screen font-body-md overflow-x-hidden">
+
+<input type="file" id="post-file" accept="image/*" class="hidden" />
+
+<header class="fixed top-0 w-full z-50 bg-surface/40 dark:bg-surface-container/40 backdrop-blur-xl border-b border-outline-variant/20 shadow-[0_4px_15px_rgba(61,87,166,0.1)]">
+<div class="flex justify-between items-center px-container-margin h-16 w-full max-w-7xl mx-auto">
+<button onclick="window.location.href='feed.html'" class="flex items-center justify-center text-on-surface-variant dark:text-outline-variant active:scale-95 duration-200">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h1 class="font-display-lg text-headline-md font-extrabold text-primary dark:text-primary-fixed tracking-tight">New Post</h1>
+<button id="btn-next-top" class="font-label-bold text-label-bold text-primary dark:text-primary-fixed active:scale-95 duration-200">
+                Next
+            </button>
+</div>
+</header>
+<main class="pt-20 pb-24 px-container-margin max-w-2xl mx-auto">
+
+<section id="drop-zone" class="relative aspect-square w-full rounded-xl overflow-hidden shadow-lg mb-lg bg-surface-container dark:bg-surface-container-high/20 border-2 border-dashed border-primary/40 flex flex-col items-center justify-center cursor-pointer hover:bg-primary/5 transition-colors group">
+    <img id="image-preview" alt="Selected post preview" class="w-full h-full object-cover hidden" src=""/>
+    
+    <div id="upload-placeholder" class="flex flex-col items-center justify-center text-center p-md pointer-events-none">
+        <span class="material-symbols-outlined text-4xl text-primary dark:text-primary-fixed mb-2 animate-bounce">add_a_photo</span>
+        <p class="font-label-bold text-on-surface">Clique aqui para selecionar a foto da Copa</p>
+        <p class="text-xs text-outline mt-1">Formatos aceitos: JPG, PNG, WEBP</p>
+    </div>
+
+    <div class="absolute bottom-4 right-4 glass-overlay px-3 py-1 rounded-full border border-white/20">
+        <span class="text-white text-xs font-label-bold flex items-center gap-2">
+            <span class="material-symbols-outlined text-sm">filter_vintage</span>
+            SELECIONAR
+        </span>
+    </div>
+</section>
+
+<section class="mb-lg">
+<div class="relative">
+<textarea id="post-caption" class="w-full bg-surface-container-highest dark:bg-surface-container-lowest/5 border-none border-b-2 border-tertiary focus:border-secondary-container focus:ring-0 rounded-lg p-md text-body-md font-body-md placeholder:text-outline min-h-[120px] resize-none transition-all" placeholder="Write a caption..."></textarea>
+<div class="flex gap-2 mt-2 overflow-x-auto hide-scrollbar pb-2">
+<button onclick="insertEmoji('⚽')" class="bg-surface-container dark:bg-on-surface-variant/20 px-3 py-1 rounded-full text-lg hover:scale-110 transition-transform">⚽</button>
+<button onclick="insertEmoji('🏆')" class="bg-surface-container dark:bg-on-surface-variant/20 px-3 py-1 rounded-full text-lg hover:scale-110 transition-transform">🏆</button>
+<button onclick="insertEmoji('🔥')" class="bg-surface-container dark:bg-on-surface-variant/20 px-3 py-1 rounded-full text-lg hover:scale-110 transition-transform">🔥</button>
+<button onclick="insertEmoji('🏟️')" class="bg-surface-container dark:bg-on-surface-variant/20 px-3 py-1 rounded-full text-lg hover:scale-110 transition-transform">🏟️</button>
+<button onclick="insertEmoji('🇧🇷')" class="bg-surface-container dark:bg-on-surface-variant/20 px-3 py-1 rounded-full text-lg hover:scale-110 transition-transform">🇧🇷</button>
+<button onclick="insertEmoji('🙌')" class="bg-surface-container dark:bg-on-surface-variant/20 px-3 py-1 rounded-full text-lg hover:scale-110 transition-transform">🙌</button>
+</div>
+</div>
+</section>
+
+<section class="space-y-md mb-xl">
+    <div class="w-full flex items-center justify-between p-md bg-surface-container dark:bg-surface-container-high/10 rounded-xl border border-outline-variant/10">
+        <div class="flex items-center gap-md w-1/3">
+            <span class="material-symbols-outlined text-primary dark:text-primary-fixed">sports_soccer</span>
+            <span class="font-label-bold text-label-bold text-sm">Partida/Jogo:</span>
+        </div>
+        <input type="text" id="post-match" placeholder="Ex: Brasil x Argentina" class="w-2/3 bg-transparent border-none text-right text-sm text-on-surface focus:ring-0 placeholder:text-outline" />
+    </div>
+
+    <div class="w-full flex items-center justify-between p-md bg-surface-container dark:bg-surface-container-high/10 rounded-xl border border-outline-variant/10">
+        <div class="flex items-center gap-md w-1/3">
+            <span class="material-symbols-outlined text-primary dark:text-primary-fixed">location_on</span>
+            <span class="font-label-bold text-label-bold text-sm">Estádio/Local:</span>
+        </div>
+        <input type="text" id="post-stadium" placeholder="Ex: Lusail Stadium" class="w-2/3 bg-transparent border-none text-right text-sm text-on-surface focus:ring-0 placeholder:text-outline" />
+    </div>
+
+    <div class="w-full flex items-center justify-between p-md bg-surface-container dark:bg-surface-container-high/10 rounded-xl">
+        <div class="flex items-center gap-md">
+            <span class="material-symbols-outlined text-primary dark:text-primary-fixed">public</span>
+            <div class="text-left">
+                <span class="block font-label-bold text-label-bold">Share to World Feed</span>
+                <span class="block text-[10px] text-outline leading-tight">Visible to all CopaGram fans</span>
+            </div>
+        </div>
+        <label class="relative inline-flex items-center cursor-pointer">
+            <input checked="" class="sr-only peer" type="checkbox"/>
+            <div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer dark:bg-on-surface-variant/30 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+        </label>
+    </div>
+</section>
+
+<div class="flex flex-col gap-md">
+<button id="btn-postar" class="w-full py-4 rounded-full bg-secondary-container text-on-secondary-container font-display-lg text-headline-md font-extrabold stadium-glow active:scale-95 transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+                POST
+            </button>
+<p class="text-center text-[10px] text-outline px-lg">
+                By posting, you agree to the CopaGram Fan Conduct Guidelines and Content Terms.
+            </p>
+</div>
+</main>
+
+<script src="app.js"></script>
+
+<script>
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('post-file');
+        const imagePreview = document.getElementById('image-preview');
+        const uploadPlaceholder = document.getElementById('upload-placeholder');
+        const btnPostar = document.getElementById('btn-postar');
+        const btnNextTop = document.getElementById('btn-next-top');
+        const captionTextarea = document.getElementById('post-caption');
+
+        // Micro-interações estéticas originais das caixas de texto
+        captionTextarea.addEventListener('focus', function() {
+            this.parentElement.closest('section').classList.add('scale-[1.01]');
+        });
+        captionTextarea.addEventListener('blur', function() {
+            this.parentElement.closest('section').classList.remove('scale-[1.01]');
+        });
+
+        // Facilitador de Emojis
+        function insertEmoji(emoji) {
+            captionTextarea.value += emoji;
+            captionTextarea.focus();
+        }
+
+        // 1. Gatilho para abrir a galeria ao clicar no quadrado da foto
+        dropZone.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // 2. Renderizar o preview real da foto escolhida na tela antes de enviar
+        fileInput.addEventListener('change', () => {
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.classList.remove('hidden');
+                    uploadPlaceholder.classList.add('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // 3. Função Unificada de Envio de Dados para a API na Vercel
+        async function publicarMemoria() {
+            const caption = captionTextarea.value;
+            const matchTag = document.getElementById('post-match').value;
+            const stadiumName = document.getElementById('post-stadium').value;
+
+            // Validação de segurança no Front
+            if (!fileInput.files || fileInput.files.length === 0) {
+                alert('Por favor, adicione uma bela foto do seu momento na Copa!');
+                return;
+            }
+
+            // 🌟 CORREÇÃO CIRÚRGICA: Captura o utilizador ativo dinamicamente do LocalStorage
+            const userSession = JSON.parse(localStorage.getItem('user'));
+            if (!userSession || !userSession.id) {
+                alert('Sessão expirada ou utilizador não encontrado. Por favor, faça login novamente.');
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Construção do contêiner multipart/form-data
+            const formData = new FormData();
+            formData.append('user_id', userSession.id); // Injetado de forma dinâmica e segura
+            formData.append('image', fileInput.files[0]);
+            formData.append('caption', caption);
+            formData.append('match_tag', matchTag);
+            formData.append('stadium_name', stadiumName);
+
+            try {
+                // Efeito visual de carregamento nos botões
+                const loadingText = "⚽ Chutando pro gol...";
+                btnPostar.innerText = loadingText;
+                btnPostar.style.pointerEvents = "none";
+                btnPostar.style.opacity = "0.7";
+                btnNextTop.innerText = "Sending...";
+
+                // Chamada oficial para a sua API na Vercel usando a variável do app.js
+                const response = await fetch(`${API_URL}/posts`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const resultado = await response.json();
+
+                if (response.ok) {
+                    alert('GOOOOL! Sua memória da Copa foi eternizada com sucesso! 🏆');
+                    window.location.href = 'feed.html'; // Redireciona de volta para o Feed dinâmico
+                } else {
+                    alert(`Erro retornado do back-end: ${resultado.error}`);
+                }
+
+            } catch (error) {
+                console.error('Erro na requisição:', error);
+                alert('Não foi possível fazer conexão com o seu servidor da Vercel. Confirme o endereço preenchido no app.js.');
+            } finally {
+                // Restaura o estado normal dos botões em caso de falha
+                btnPostar.innerHTML = `<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span> POST`;
+                btnPostar.style.pointerEvents = "auto";
+                btnPostar.style.opacity = "1";
+                btnNextTop.innerText = "Next";
+            }
+        }
+
+        // Conectar cliques dos botões à função de postagem
+        btnPostar.addEventListener('click', (e) => { e.preventDefault(); publicarMemoria(); });
+        btnNextTop.addEventListener('click', (e) => { e.preventDefault(); publicarMemoria(); });
+    </script>
+</body>
+</html>

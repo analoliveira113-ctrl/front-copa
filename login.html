@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>CopaGram | Entrar na Torcida</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anybody:wght@700;800;900&family=Be+Vietnam+Pro:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        .glass-overlay {
+            background: rgba(0, 107, 38, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .stadium-glow {
+            box-shadow: 0 0 20px rgba(253, 220, 0, 0.2);
+        }
+    </style>
+    <script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                "colors": {
+                        "outline": "#6e7b6b",
+                        "primary-container": "#008732",
+                        "surface-container": "#e9f0e4",
+                        "on-primary-container": "#f7fff2",
+                        "primary": "#006b26",
+                        "secondary-container": "#fddc00",
+                        "on-secondary-container": "#706000",
+                        "inverse-surface": "#2b322a",
+                        "surface-container-low": "#eff6ea",
+                        "surface-container-highest": "#dde5d9"
+                },
+                "fontFamily": {
+                        "display-lg": ["Anybody"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "headline-md": ["Anybody"]
+                }
+              }
+            }
+          }
+    </script>
+</head>
+<body class="bg-[#002107] text-[#f7fff2] font-body-md antialiased min-h-screen flex flex-col justify-center items-center px-4 py-12">
+
+    <div class="w-full max-w-md space-y-8 bg-inverse-surface/30 p-8 rounded-2xl border border-outline/10 stadium-glow backdrop-blur-md">
+        
+        <div class="text-center space-y-2">
+            <h1 class="font-display-lg text-4xl font-black text-secondary-container tracking-tight">CopaGram</h1>
+            <p id="auth-subtitle" class="text-sm text-outline">Compartilhe suas memórias da arquibancada</p>
+        </div>
+
+        <form id="auth-form" class="space-y-5">
+            
+            <div id="username-container" class="hidden space-y-1">
+                <label class="text-xs font-bold uppercase tracking-wider text-secondary-container flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">person</span> Usuário
+                </label>
+                <input type="text" id="username" placeholder="ex: torcedorHexa" class="w-full bg-[#002107] border border-outline/20 rounded-xl px-4 py-3 text-sm text-on-primary-container focus:border-primary-container focus:ring-0 placeholder:text-outline/50" />
+            </div>
+
+            <div class="space-y-1">
+                <label class="text-xs font-bold uppercase tracking-wider text-secondary-container flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">mail</span> E-mail
+                </label>
+                <input type="email" id="email" required placeholder="seu.email@copa.com" class="w-full bg-[#002107] border border-outline/20 rounded-xl px-4 py-3 text-sm text-on-primary-container focus:border-primary-container focus:ring-0 placeholder:text-outline/50" />
+            </div>
+
+            <div class="space-y-1">
+                <label class="text-xs font-bold uppercase tracking-wider text-secondary-container flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">lock</span> Senha
+                </label>
+                <input type="password" id="password" required placeholder="••••••••" class="w-full bg-[#002107] border border-outline/20 rounded-xl px-4 py-3 text-sm text-on-primary-container focus:border-primary-container focus:ring-0 placeholder:text-outline/50" />
+            </div>
+
+            <button type="submit" id="btn-submit" class="w-full py-4 rounded-xl bg-secondary-container text-on-secondary-container font-display-lg font-extrabold text-sm tracking-wider active:scale-[0.98] transition-all shadow-md mt-2 flex items-center justify-center gap-2">
+                <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">login</span>
+                ENTRAR NO ESTÁDIO
+            </button>
+        </form>
+
+        <div class="text-center pt-2">
+            <button id="btn-toggle-mode" class="text-xs font-medium text-primary-fixed hover:text-white transition-colors underline underline-offset-4">
+                Ainda não tem conta? Convoque-se para o app
+            </button>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+    <script>
+        const authForm = document.getElementById('auth-form');
+        const usernameContainer = document.getElementById('username-container');
+        const usernameInput = document.getElementById('username');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const btnSubmit = document.getElementById('btn-submit');
+        const btnToggleMode = document.getElementById('btn-toggle-mode');
+        const authSubtitle = document.getElementById('auth-subtitle');
+
+        // Estado inicial: Modo de Login
+        let isSignUpMode = false;
+
+        // Alterna a interface entre Login e Cadastro de forma fluida
+        btnToggleMode.addEventListener('click', () => {
+            isSignUpMode = !isSignUpMode;
+            
+            if (isSignUpMode) {
+                usernameContainer.classList.remove('hidden');
+                usernameInput.setAttribute('required', 'required');
+                authSubtitle.innerText = "Crie sua conta para registrar seus golaços";
+                btnSubmit.innerHTML = `<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">assignment_ind</span> CRIAR MINHA CONTA`;
+                btnToggleMode.innerText = "Já faz parte da torcida? Faça o Login";
+            } else {
+                usernameContainer.classList.add('hidden');
+                usernameInput.removeAttribute('required');
+                authSubtitle.innerText = "Compartilhe suas memórias da arquibancada";
+                btnSubmit.innerHTML = `<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">login</span> ENTRAR NO ESTÁDIO`;
+                btnToggleMode.innerText = "Ainda não tem conta? Convoque-se para o app";
+            }
+        });
+
+        // Processa o envio dos dados para as rotas da Vercel
+        authForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = emailInput.value;
+            const password = passwordInput.value;
+            const username = usernameInput.value;
+
+            // Define qual endpoint chamar com base no modo atual
+            const endpoint = isSignUpMode ? '/auth/signup' : '/auth/login';
+            
+            // Texto dinâmico de carregamento (Loading)
+            const textoOriginal = btnSubmit.innerHTML;
+            btnSubmit.innerHTML = `<span class="material-symbols-outlined animate-spin text-sm">sync</span> PROCESSANDO...`;
+            btnSubmit.style.pointerEvents = "none";
+            btnSubmit.style.opacity = "0.7";
+
+            try {
+                const payload = { email, password };
+                if (isSignUpMode) {
+                    payload.username = username;
+                }
+
+                const response = await fetch(`${API_URL}${endpoint}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const dados = await response.json();
+
+                if (response.ok) {
+                    // Armazena a sessão do usuário de forma real no navegador
+                    localStorage.setItem('user', JSON.stringify(dados.user));
+                    
+                    alert(isSignUpMode ? 'Conta criada! Bem-vindo à seleção do CopaGram! 🏆' : 'Login realizado com sucesso! Partiu feed! ⚽');
+                    window.location.href = 'feed.html';
+                } else {
+                    alert(`Erro na autenticação: ${dados.error || 'Falha inexplicável'}`);
+                }
+
+            } catch (error) {
+                console.error('Erro de rede na autenticação:', error);
+                alert('Erro ao conectar com o servidor da Vercel. Verifique o seu app.js.');
+            } finally {
+                // Restaura o estado visual do botão
+                btnSubmit.innerHTML = textoOriginal;
+                btnSubmit.style.pointerEvents = "auto";
+                btnSubmit.style.opacity = "1";
+            }
+        });
+    </script>
+</body>
+</html>

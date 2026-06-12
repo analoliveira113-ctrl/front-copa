@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CopaGram | Discovery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;700;800;900&amp;family=Be+Vietnam+Pro:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#25428f",
+                    "on-tertiary-fixed": "#00174d",
+                    "on-primary-fixed": "#002107",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#ffe24b",
+                    "on-secondary-container": "#706000",
+                    "surface-container-low": "#eff6ea",
+                    "outline": "#6e7b6b",
+                    "primary-container": "#008732",
+                    "tertiary-fixed-dim": "#b5c4ff",
+                    "surface-container": "#e9f0e4",
+                    "tertiary": "#3d57a6",
+                    "on-secondary": "#ffffff",
+                    "surface-dim": "#d5dcd0",
+                    "surface-variant": "#dde5d9",
+                    "on-primary-container": "#f7fff2",
+                    "on-tertiary-container": "#fefbff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#5771c1",
+                    "primary": "#006b26",
+                    "on-error": "#ffffff",
+                    "on-background": "#171d16",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f4fcef",
+                    "tertiary-fixed": "#dbe1ff",
+                    "secondary-container": "#fddc00",
+                    "on-primary-fixed-variant": "#00531c",
+                    "surface-tint": "#006e27",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#e3c600",
+                    "surface": "#f4fcef",
+                    "background": "#f4fcef",
+                    "secondary": "#6d5e00",
+                    "primary-fixed": "#81fc90",
+                    "outline-variant": "#bdcab9",
+                    "surface-container-high": "#e3eade",
+                    "inverse-primary": "#65df76",
+                    "on-surface-variant": "#3e4a3d",
+                    "surface-container-highest": "#dde5d9",
+                    "on-secondary-fixed-variant": "#524600",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2b322a",
+                    "on-surface": "#171d16",
+                    "inverse-on-surface": "#ecf3e7",
+                    "on-secondary-fixed": "#211b00",
+                    "primary-fixed-dim": "#65df76",
+                    "on-primary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "xs": "4px",
+                    "container-margin": "20px",
+                    "sm": "8px",
+                    "base": "4px",
+                    "gutter": "16px",
+                    "xl": "40px",
+                    "lg": "24px"
+            },
+            "fontFamily": {
+                    "stats-number": ["Anybody"],
+                    "display-lg": ["Anybody"],
+                    "body-md": ["Be Vietnam Pro"],
+                    "display-lg-mobile": ["Anybody"],
+                    "label-bold": ["Be Vietnam Pro"],
+                    "headline-md": ["Anybody"],
+                    "body-lg": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "stats-number": ["20px", {"lineHeight": "1", "fontWeight": "900"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(221, 229, 217, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .dark .glass-card {
+            background: rgba(62, 74, 61, 0.4);
+        }
+        .masonry-grid {
+            columns: 2;
+            column-gap: 16px;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid {
+                columns: 3;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                columns: 4;
+            }
+        }
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 16px;
+        }
+        .stadium-glow {
+            box-shadow: 0 0 20px rgba(61, 87, 166, 0.2);
+        }
+        .active-tab-glow {
+            box-shadow: 0 0 15px rgba(253, 220, 0, 0.5);
+        }
+        body {
+            background-color: #171d16;
+            color: #f4fcef;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/40 dark:bg-surface-container/40 backdrop-blur-xl border-b border-outline-variant/20 shadow-[0_4px_15px_rgba(61,87,166,0.1)]">
+<div class="flex justify-between items-center px-container-margin h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" style="font-size: 28px;">sports_soccer</span>
+<h1 class="font-display-lg text-headline-md font-extrabold text-primary dark:text-primary-fixed tracking-tight">CopaGram</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant dark:text-outline-variant hover:opacity-80 transition-opacity active:scale-95 duration-200">send</button>
+</div>
+</div>
+</header>
+<main class="pt-20 pb-24 px-container-margin max-w-7xl mx-auto">
+<!-- Animated Background Elements -->
+<div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none opacity-20">
+
+</div>
+<!-- Search Section -->
+<section class="mb-lg">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full h-14 pl-12 pr-4 bg-surface-container-highest/30 dark:bg-surface-container-highest/20 backdrop-blur-md border-b-2 border-tertiary focus:border-secondary-container transition-all outline-none rounded-t-xl font-body-lg text-on-surface" placeholder="Find fans or matches" type="text"/>
+</div>
+</section>
+<!-- Trending Matches -->
+<section class="mb-xl">
+<div class="flex items-center justify-between mb-md">
+<h2 class="font-headline-md text-headline-md flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+                    Trending Matches
+                </h2>
+<button class="text-label-bold font-label-bold text-primary dark:text-primary-fixed uppercase tracking-wider">View All</button>
+</div>
+<div class="flex overflow-x-auto gap-md pb-4 no-scrollbar">
+<!-- Match Card 1 -->
+<div class="flex-shrink-0 w-64 glass-card rounded-xl p-md border border-outline-variant/10 shadow-lg group cursor-pointer hover:scale-[1.02] transition-transform">
+<div class="flex justify-between items-center mb-sm">
+<span class="bg-error px-2 py-0.5 rounded text-[10px] font-bold text-white flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> LIVE
+                        </span>
+<span class="font-stats-number text-stats-number text-tertiary dark:text-tertiary-fixed-dim">78'</span>
+</div>
+<div class="flex justify-between items-center gap-2">
+<div class="flex flex-col items-center flex-1">
+<img alt="Brazil" class="w-10 h-10 rounded-full object-cover border-2 border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuQOzDK2zAAHYsJfg4F4_exccS442Yzugm2A4SosBdoWiUtNKGSUPlYzFudsJoNrXPL_ifn1yXDWxGYfxDV6yuUu8DvWkVL2gMct3D0Ni5QnOPvg2fmWgvcks19elJBpg_LDPtdQJXoJkTlpENdxI0cFGr2QkWtxtMa6lI5eUla85ioitD9scHiBZJ1cWTUkb1Cu6YrEyNAen9D2AT1XOvwH9f40z-D9TowLjOCpzyfCx5-HJlPn0Sji-Du2VO3v0ImO0dFtexRw"/>
+<p class="font-label-bold text-xs mt-1">BRA</p>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-stats-number text-2xl text-on-surface">2 - 1</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<img alt="Argentina" class="w-10 h-10 rounded-full object-cover border-2 border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_baimVk6mF011WSQoL6vRCmKsCSFMi4du8JWaPote0jIr2mYJjhr6DxP8q8iDo3USlSQWJ5lstT8eRZzKN3QABW8f7-VHtbrexsg_It_sEtUaQG0z53oH2ibmLx6roH9Id7GDswmN1uoSbMA3H7MHIJMGxwer-dqUlgizLh7dsfWLwn4VdzrYezZV1iVSD4iIXue5Ht12otKDtHUoFV1hh2SYD-cMvMUfJe_As2T-fyrr-HQVQz_P9PHTdkS0XrQlLAc_Qg4Ong"/>
+<p class="font-label-bold text-xs mt-1">ARG</p>
+</div>
+</div>
+</div>
+<!-- Match Card 2 -->
+<div class="flex-shrink-0 w-64 glass-card rounded-xl p-md border border-outline-variant/10 shadow-lg group cursor-pointer hover:scale-[1.02] transition-transform">
+<div class="flex justify-between items-center mb-sm">
+<span class="bg-on-surface-variant/20 px-2 py-0.5 rounded text-[10px] font-bold text-on-surface flex items-center gap-1">
+                            UPCOMING
+                        </span>
+<span class="font-label-bold text-[10px] text-outline">21:00</span>
+</div>
+<div class="flex justify-between items-center gap-2">
+<div class="flex flex-col items-center flex-1">
+<img alt="France" class="w-10 h-10 rounded-full object-cover border-2 border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxfNGoQp9ZD_3ScnrrqInuJRWgv-UXTMCBwB2QyJhqORdrF3xZ1idRUZ5C4ki5ocOU7Oxa2dCfMCRryWT0C_HiS5KIrnwlX_gtrr-zRtY7guyDt346OoJjowPmNhDGf1sS6TruzEJKjB6JMjcCKVLfp_ah07Qnm5f-lc1v0fHHBAzSl3-dkDHwTaAq__eG0KRTPky5I_bwyqXmV0HMj-WLz-Jn78ux-89nBkLMjMIgqsYVYwCZzzGsqsSv-iVBiy6KXt2EOc0hkQ"/>
+<p class="font-label-bold text-xs mt-1">FRA</p>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-stats-number text-2xl text-outline-variant">vs</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<img alt="Germany" class="w-10 h-10 rounded-full object-cover border-2 border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXRbonLfB5PqpfvvlOn6Rip1SeBOjlUi0FSSiiwY2TP3UnALRPhWLMg7AAe4tBFf_NtNPPTLTcpHLvpenPAlBXhMYrnalO3cmjBmbfA2IMQFXQFPFv1BUmsJMqVNExiOalqDJdTdlYBmq8bakdTpO7psttl21xOxMeLx7CJrqu1DffEYUiM6rVdCuiL-PxbNCk6qd6ldAHMqqblQ6nB4BPpf-3SWUlbSOhq7xawXlQMPKB8E8rSgeol-_-ZDWm3TNFn20NpiZhxA"/>
+<p class="font-label-bold text-xs mt-1">GER</p>
+</div>
+</div>
+</div>
+<!-- Match Card 3 -->
+<div class="flex-shrink-0 w-64 glass-card rounded-xl p-md border border-outline-variant/10 shadow-lg group cursor-pointer hover:scale-[1.02] transition-transform">
+<div class="flex justify-between items-center mb-sm">
+<span class="bg-on-surface-variant/20 px-2 py-0.5 rounded text-[10px] font-bold text-on-surface flex items-center gap-1">
+                            UPCOMING
+                        </span>
+<span class="font-label-bold text-[10px] text-outline">TOMORROW</span>
+</div>
+<div class="flex justify-between items-center gap-2">
+<div class="flex flex-col items-center flex-1">
+<img alt="England" class="w-10 h-10 rounded-full object-cover border-2 border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8EWxF0slWf6Za9uWIZEmT2gdz8XfDgrCocOQCdckfktVIg7DZvwxA9jFPsGYQhT4xhfRxBGbr94ekaxURuovk-VcNBHl9Rt1BmDakqQfMn_riMHyMkpDyf8arDEJ4QSAViATcF8f-uHTc4C7LS04clCKIYrdxvGC2Pw2ToDnZx2OPK0AlROp07BAg7gxFNR8ZDYR_Cwbz4u12Kp3hxjIxNgKfXybGrIpf6mdc8Xh4mUC_iJKZgGv_Y2ppDqgB2442Ehb-Aj_Eug"/>
+<p class="font-label-bold text-xs mt-1">ENG</p>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-stats-number text-2xl text-outline-variant">vs</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<img alt="Spain" class="w-10 h-10 rounded-full object-cover border-2 border-outline-variant/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcaTJxOZLIqzW8KMmHfVXztLQ04Nhv549AYuK_-8uWqCa_0ShNhrrwzgOJXVtwy2h7gubruvp0Xr_e0lx55al0MkNLELGUqiZ8jxBurAeQ2ttHNSk3lthxclioSgcjMy-3ZsaaF0jWxX_Xr0BJGmA-wOGQG2a_XxTXONn5KV9LjO_5Vwlf7_5VrNDfkO04-iQYqp-525PdkX41Z8wnDGZPcNU5idSCKZe73hNYqcinzGKEApAjHLHXsBAlzVcWCrTVnrG0jhh3wQ"/>
+<p class="font-label-bold text-xs mt-1">ESP</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Explore Grid Section -->
+<section>
+<div class="flex items-center gap-3 mb-lg">
+<h2 class="font-display-lg text-headline-md font-extrabold text-on-surface tracking-tighter">Explore #CopaGram</h2>
+<div class="h-[2px] flex-grow bg-gradient-to-r from-secondary-container to-transparent opacity-30"></div>
+</div>
+<div class="masonry-grid">
+<!-- Grid Item 1 -->
+<div class="masonry-item relative group rounded-xl overflow-hidden shadow-xl cursor-pointer">
+<img class="w-full object-cover aspect-[3/4] group-hover:scale-110 transition-transform duration-500" data-alt="A cinematic low-angle shot of a massive football stadium at night, filled with thousands of fans under bright white floodlights. The air is thick with celebratory atmosphere, featuring Estadio glow and subtle smoke. The primary color palette includes deep stadium blues and electric greens, highlighting the modern architecture of the venue in a high-octane celebratory mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo6HA49CbYrii-WXNe2fNRf7SlEc5dZHTr0AJCpcRRf_l3_uecD_MMKM8wQjabv7xg-q3ovZzacN2ct3D_ScyVlZGXJeUo4AjD4mz2dtuXTMJn6WN5Tyry2D8ZfjqGQhYfA7JEwqpYMQYffyXj8pfaGyCZcH16TI5Vd3w2kulK7tC0crpcYe65lv_EG6eIEDMnBXVGLTMaE_0McLqrq9d3XcLiKplBaDK-R1vbF9a33lsUptCUmaUvH-wuux5sDtJMRKieMbr1wA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-4">
+<div class="glass-card p-2 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container"></div>
+<span class="font-label-bold text-xs">@stadium_hunter</span>
+</div>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+</div>
+</div>
+<!-- Grid Item 2 (Wide/Tall) -->
+<div class="masonry-item relative group rounded-xl overflow-hidden shadow-xl cursor-pointer">
+<img class="w-full object-cover aspect-[1/1] group-hover:scale-110 transition-transform duration-500" data-alt="A vibrant wide shot of football fans draped in yellow and green national colors, cheering ecstatically during a high-stakes match. The lighting is golden hour sun streaming into the stadium, creating high-glare highlights and deep rich shadows. The mood is communal and electric, reflecting the modern bold brand identity of CopaGram with high-contrast energetic vibes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1ju7sWG6EEKFi5tFJDKG68LGk7t7rGaKr07vUkppB5C3V61xYM_iubwlWcRGX5nt_xqf893_-CwUtCzSC8_ohL_oB337PyZbXQWg2ZodmnoZGFbd-h0KWxL8AiHrwPANtOCvcQjAOirflY5vWGSPTqsv_xjl5WqYlfqiVXdge6IobtWnGPHacgeyp2TcYoccrg-L-R8vFJHd2Uf1c7k7AKa5Sqgr7Q_18Zt1cMlEIp2cLoiITNIZshllxWPAp6iyvk-7mRGw45g"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl opacity-0 group-hover:opacity-100 transition-all drop-shadow-lg">play_circle</span>
+</div>
+</div>
+<!-- Grid Item 3 -->
+<div class="masonry-item relative group rounded-xl overflow-hidden shadow-xl cursor-pointer">
+<img class="w-full object-cover aspect-[2/3] group-hover:scale-110 transition-transform duration-500" data-alt="Close up action shot of a professional football on the green pitch, with the blurred background showing an out-of-focus crowd in a world-class stadium. The photo captures the high-octane energy of the game with sharp focus and cinematic motion blur on the ball. The color palette is dominated by intense grass greens and stadium blues, creating a high-end photography aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNv07QkRoq51OPBzdDD5KGdV95ab0Hu0BisX7Ot2jIv17qE9U2h70iM31uDXpXrmkSsXkF_z3G2T_Z4DT0geNTCZuVysSkJXfCcXmnANPy6iXBFlpUhHmAh8eysD91YKEHaeTX5YpD4A-48DQsHT-BgZuwqzM174nrqkdlWd1bJXNsAOLVPJGhI8hEiV9hwTqja6u01a3SgV31aSPQYtdswiPub4cTxR2oWHVpMvN_ZApwsGD3lk9qe9DoOih0EK3w9G79PJC_1A"/>
+<div class="absolute top-3 right-3 glass-card px-2 py-1 rounded-full flex items-center gap-1 border border-white/20">
+<span class="material-symbols-outlined text-xs text-secondary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] font-bold">TOP POST</span>
+</div>
+</div>
+<!-- Grid Item 4 -->
+<div class="masonry-item relative group rounded-xl overflow-hidden shadow-xl cursor-pointer">
+<img class="w-full object-cover aspect-[4/5] group-hover:scale-110 transition-transform duration-500" data-alt="A wide cinematic shot of fans lighting flares in a football stadium, creating a vibrant red glow that illuminates the dark night sky. The atmosphere is smoky and intense, capturing the electric communal spirit of a sold-out match. The visual style merges modern bold graphics with raw athletic passion, utilizing high-contrast lighting and deep stadium shadows for depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1eAoGBJcl7ET-qAKJnElqgxEV6ZfRQpB4BIic5hfukALWkOFVptFCluTF9aksrhgmY-weSly0cjjjtjHZm25HnP2NGqf4bTorFpkxGd8oMB3f_YGoC0-iyFW39XnhEK4RJfOxvi_L7QQPAD1sLikhTZf68NPT8p-G_cHvdIu3ieuoiRw-tSoGDLp9HzpI6j59QBD4fQCzShDhlYKXvKPCJG6viLV6luH7QgKnIKhTDrUYrzx5Cwz8vpo_0GlKA_qcX3ZrwcLdSA"/>
+</div>
+<!-- Grid Item 5 -->
+<div class="masonry-item relative group rounded-xl overflow-hidden shadow-xl cursor-pointer">
+<img class="w-full object-cover aspect-[1/1] group-hover:scale-110 transition-transform duration-500" data-alt="Professional sports photographer on the sidelines of a major football tournament, focusing their long lens towards the pitch. The background is a bokeh of stadium lights and colorful fan flags. The lighting is crisp and modern, reflecting a premium media aesthetic. The scene is grounded by deep blues and vibrant yellow accents, embodying the celebratory high-energy tone of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKAa5yAVcmL0ybl33tMXxlMuL4GBm8QYkdj6mbLjFlqru39ptHxeTfPXteYbv95fC8mG-Gq8b4tOfs1uF53zl3DoknYFnAG2VWE6S2Hbb_0lkjBeUWkCM4c-5y2UoN3TpkPRkVVyImuUKYNKFf1tMDPr3qcgHE6xc1bbaIBjpy2dLJHTpOA2yqqza38nBq4IRp1TR44OIds3ZZqx7lLEs-5sNRQNjtcLzcAk9T-GFWyd_SXwQtxqUGG3LaouqlEk2XNSvoqO8v5w"/>
+</div>
+<!-- Grid Item 6 -->
+<div class="masonry-item relative group rounded-xl overflow-hidden shadow-xl cursor-pointer">
+<img class="w-full object-cover aspect-[3/4] group-hover:scale-110 transition-transform duration-500" data-alt="A group of diverse fans from around the world wearing various team jerseys, laughing and sharing a moment outside a modern futuristic stadium. The setting is bright and sunny with a high-glare outdoor lighting effect. The style is celebratory and communal, utilizing airy gaps and vibrant colors to convey the joy of the global football community under the CopaGram banner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlUIv8uvi2pDjXj5iDuLvAd7gNyT0QkLBus365IncVqILPZLgPz2BNpS3q-h58z9jnl_3-lcEoGGTGxqKSu71_PwpAiOMbnhDHC0P_4e3ffd-KF7aWZFsEEB5rX3dfbJaSWLlMlwTL3qzrlD-148cQaOrCQsgwjet8L9UlsyN-cCAa4dMkoA8FjH7tXJneVD7s2pE6HYhU1xnutM3JJskVbDjXv9KTMIwZjLzkzp1z2b64PO73NEdHV4tvzbUSCv7GRfay7gSclg"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/60 dark:bg-surface-container-highest/60 backdrop-blur-2xl shadow-[0_-4px_20px_rgba(61,87,166,0.15)] flex justify-around items-center px-4 py-2 pb-safe">
+<a class="flex items-center justify-center text-on-surface-variant dark:text-outline-variant p-3 hover:bg-on-surface-variant/10 rounded-full transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="flex items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-full p-3 shadow-[0_0_10px_rgba(253,220,0,0.4)] active-tab-glow" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+</a>
+<button class="flex items-center justify-center text-on-surface-variant dark:text-outline-variant p-3 hover:bg-on-surface-variant/10 rounded-full transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<button class="flex items-center justify-center text-on-surface-variant dark:text-outline-variant p-3 hover:bg-on-surface-variant/10 rounded-full transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center text-on-surface-variant dark:text-outline-variant p-3 hover:bg-on-surface-variant/10 rounded-full transition-all active:scale-90 duration-150">
+<span class="material-symbols-outlined">person</span>
+</button>
+</nav>
+<script>
+        // Micro-interactions for masonry items
+        document.querySelectorAll('.masonry-item').forEach(item => {
+            item.addEventListener('touchstart', function() {
+                this.classList.add('scale-95');
+            });
+            item.addEventListener('touchend', function() {
+                this.classList.remove('scale-95');
+            });
+        });
+
+        // Floating Action Button logic if needed (currently nav handles it)
+        // Header scroll effect
+        let lastScroll = 0;
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body></html>
